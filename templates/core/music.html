@@ -1,0 +1,26 @@
+{% extends "core/base.html" %}
+
+{% block title %}Music{% endblock %}
+
+{% block content %}
+    <h1>Music</h1>
+    <div class="content">
+        <h2>Our Music Collection</h2>
+        <p>Browse through our extensive collection of music tracks and albums.</p>
+        <div class="track-list">
+            <button class="button" onclick="window.musicPlayer.play(window.musicPlayer.tracks[0])">Play Track 1</button>
+            <button class="button" onclick="window.musicPlayer.play(window.musicPlayer.tracks[1])">Play Track 2</button>
+        </div>
+    </div>
+{% endblock %}
+
+<div class="music-player">
+    <div class="player-controls">
+        <button class="play-button" onclick="window.musicPlayer.togglePlay()">
+            {{ isPlaying ? 'Pause' : 'Play' }}
+        </button>
+        <span id="current-track">No track playing</span>
+    </div>
+</div>
+
+<script src="{% static 'js/music-player.js' %}"></script> 
